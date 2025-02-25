@@ -1,12 +1,11 @@
 // 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layouts/Layout';
 import AdminLanding from './components/Admin/AdminLanding';
 import Home from './pages/Home';
 import Hospitals from './pages/Hospitals';
 import Ambulances from './pages/Ambulances';
 import HospitalDetail from './pages/HospitalDetail';
-import Admin from './pages/Admin';
 import AdminLogin from './components/Admin/AdminLogin';
 import AdminSignUp from './components/Admin/AdminSignup';
 import Login from './components/Auth/Login';
@@ -35,6 +34,7 @@ function App() {
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/signup" element={<AdminSignUp />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />}>
+        <Route index element={<Navigate to="overview" replace />} />
           <Route path="overview" element={<Overview />} />
           <Route path="hospital-form" element={<HospitalForm />} />
           <Route path="ambulance-form" element={<AmbulanceForm onSubmit={handleAmbulanceSubmit} />} />
