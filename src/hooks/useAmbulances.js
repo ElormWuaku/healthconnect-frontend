@@ -29,7 +29,7 @@ const useAmbulances = () => {
 
       try {  
 
-        const response = await apiClient.get(`/ambulances/getallambulances`);
+        const response = await apiClient.get(`/users/ambulances`);
 
         const data= response.data
       
